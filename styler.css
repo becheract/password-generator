@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+#generateBTN {
+    margin: 10px;
+}
+
+.container{
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+}
