@@ -12,22 +12,39 @@ function generatePassword() {
     //and round it down
     //values can only be between 0-9
     for (let x = 0; x < pLength; x++) {
-        
+        console.log(`The length of the pass word is ${pLength}`);
         //math random for the amount of options +1
             let num = Math.floor(Math.random() * 4);
             console.log(num);
         //if number equals to one then pick a random symbol
         //get values of checkboxes
-        let checkboxSymbol = document.getElementById("symbols").value;
-        let checkboxNum = document.getElementById("numbers").value;
-        let checkboxLower = document.getElementById("lowercase").value;
-        let checkboxUpper = document.getElementById("uppercase").value;
+        let checkboxSymbol = document.getElementById("symbols").checked;
+        let checkboxNum = document.getElementById("numbers").checked;
+        let checkboxLower = document.getElementById("lowercase").checked;
+        let checkboxUpper = document.getElementById("uppercase").checked;
+        
+  
         
         //if the checkbox is checked
-        
         if(num == 0){
-            let symbolsPossible = "~`!@#$%^&*()-_=+{}[];:'\\|,<.>/?\"\"";
-            generatedPassword += symbolsPossible.charAt(Math.floor(Math.random() * symbolsPossible.length));
+            console.log(checkboxSymbol);
+            //if true then run code below
+            if(checkboxSymbol == true){
+                //number of possibilities
+                let symbolsPossible = "~`!@#$%^&*()-_=+{}[];:'\\|,<.>/?\"\"";
+                //append it to the password
+                generatedPassword += symbolsPossible.charAt(Math.floor(Math.random() * symbolsPossible.length));
+            }
+            
+            //check if checkbox is false
+            else if (checkboxSymbol == false){
+                console.log("does this work?");
+            //if false then return and loop again
+            let newNum = Math.ceil(Math.random() * 3);
+            console.log(`generated new number is ${newNum}`);
+            
+        }
+        
         }
    
         
@@ -49,8 +66,11 @@ function generatePassword() {
         }
    
     }
+    //show the password
     console.log(generatedPassword);
+    //show the length of the password to make sure that it's generating the correct length
     console.log(generatedPassword.length);
+    //send it to the textbox
     let txtpass = document.getElementById("generated-pass").value = generatedPassword;
 }   
 
