@@ -12,26 +12,45 @@ function generatePassword() {
     //and round it down
     //values can only be between 0-9
     for (let x = 0; x < pLength; x++) {
-        console.log(Math.floor(Math.random() * 10));
         
         //math random for the amount of options +1
-            let num = Math.floor(Math.random() * 5);
+            let num = Math.floor(Math.random() * 4);
             console.log(num);
         //if number equals to one then pick a random symbol
-        if(num == 1){
+        //get values of checkboxes
+        let checkboxSymbol = document.getElementById("symbols").value;
+        let checkboxNum = document.getElementById("numbers").value;
+        let checkboxLower = document.getElementById("lowercase").value;
+        let checkboxUpper = document.getElementById("uppercase").value;
+        
+        //if the checkbox is checked
+        
+        if(num == 0){
             let symbolsPossible = "~`!@#$%^&*()-_=+{}[];:'\\|,<.>/?\"\"";
             generatedPassword += symbolsPossible.charAt(Math.floor(Math.random() * symbolsPossible.length));
-            console.log(generatedPassword);
-        }else if(num ==2){
-
-        }else if(num==3){
-
-        }else if(num==4)[
-            
-        ]
-        
-    }
+        }
    
+        
+        if(num == 1){
+            let numbersPossible = "1234567890";
+            generatedPassword += numbersPossible.charAt(Math.floor(Math.random() * numbersPossible.length));
+        }
+   
+        
+        if(num==2){
+            let lowercasePossible = "abcdefghijklmnopqrstuvwxyz";
+            generatedPassword += lowercasePossible.charAt(Math.floor(Math.random() * lowercasePossible.length));
+        }
+      
+            
+            if(num==3){
+            let uppercasePossible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            generatedPassword += uppercasePossible.charAt(Math.floor(Math.random() * uppercasePossible.length));
+        }
+   
+    }
+    console.log(generatedPassword);
+    console.log(generatedPassword.length);
+    let txtpass = document.getElementById("generated-pass").value = generatedPassword;
 }   
 
-generatePassword();

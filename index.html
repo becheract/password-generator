@@ -11,17 +11,20 @@
 <body>
     <div class="container">
     <h1>Password-Generator</h1>
-   
+    <h5>Length of Password</h5>
     <input type="number" id="passwordLength">
 
     <ul>
-    <li>Include symbols:<input type="checkbox" class="checkbox" id="symbols"></li>
-    <li>Include numbers:<input type="checkbox" class="checkbox" id="numbers"></li>
-    <li>Include lowercase letters:<input type="checkbox" class="checkbox" id="lowercase"></li>
-    <li>Include uppercase letters:<input type="checkbox" class="checkbox" id="uppercase"></li>
+    <li>Include symbols:<input type="checkbox" class="checkbox" id="symbols" checked></li>
+    <li>Include numbers:<input type="checkbox" class="checkbox" id="numbers" checked></li>
+    <li>Include lowercase letters:<input type="checkbox" class="checkbox" id="lowercase" checked></li>
+    <li>Include uppercase letters:<input type="checkbox" class="checkbox" id="uppercase" checked></li>
     </ul>
     </br>
     <button id="generateBTN" onclick="generatePassword()">Generate Password</button>
+    </br>
+    <h5>Your new Password</h5>
+    <input type="text" id="generated-pass">
 </div>
 </body>
 <script src="main.js"></script>
